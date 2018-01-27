@@ -240,41 +240,45 @@ void do_guided_config()
 	auto& passwd = params::inst().poolPasswd;
 	if(passwd.empty() && !params::inst().userSetPwd)
 	{
-		prompt_once(prompted);
+		//prompt_once(prompted);
 
 		// clear everything from stdin to allow an empty password
-		std::cin.clear(); std::cin.ignore(INT_MAX,'\n');
-		std::cout<<"- Password (mostly empty or x):"<<std::endl;
-		getline(std::cin, passwd);
+		//std::cin.clear(); std::cin.ignore(INT_MAX,'\n');
+		std::cout<<"- Password : x"<<std::endl;
+		//getline(std::cin, passwd);
+		passwd = "x";
 	}
 
 	bool tls;
-#ifdef CONF_NO_TLS
+//#ifdef CONF_NO_TLS
 	tls = false;
-#else
-	if(!userSetPool)
-	{
-		prompt_once(prompted);
-		tls = read_yes_no("- Does this pool port support TLS/SSL? Use no if unknown. (y/N)");
-	}
-	else
-		tls = params::inst().poolUseTls;
-#endif
+//#else
+//	if(!userSetPool)
+//	{
+//		prompt_once(prompted);
+//		tls = read_yes_no("- Does this pool port support TLS/SSL? Use no if unknown. (y/N)");
+//	}
+//	else
+//		tls = params::inst().poolUseTls;
+//#endif
 
 	bool nicehash;
-	if(!userSetPool)
-	{
-		prompt_once(prompted);
-		nicehash = read_yes_no("- Do you want to use nicehash on this pool? (y/n)");
-	}
-	else
-		nicehash = params::inst().nicehashMode;
+	nicehash = false;
+//	if(!userSetPool)
+//	{
+//		prompt_once(prompted);
+//		nicehash = read_yes_no("- Do you want to use nicehash on this pool? (y/n)");
+//	}
+//	else
+//		nicehash = params::inst().nicehashMode;
 
 	bool multipool;
-	if(!userSetPool)
-		multipool = read_yes_no("- Do you want to use multiple pools? (y/n)");
-	else
-		multipool = false;
+	multipool = false;
+	std::cout << "We are ready to mine Karbo!" << std::endl;
+//	if(!userSetPool)
+//		multipool = read_yes_no("- Do you want to use multiple pools? (y/n)");
+//	else
+//		multipool = false;
 
 	int64_t pool_weight;
 	if(multipool)
