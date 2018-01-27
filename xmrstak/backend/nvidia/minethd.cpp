@@ -227,7 +227,7 @@ void minethd::work_main()
 		std::exit(0);
 	}
 
-	bool mineMonero = strcmp_i(::jconf::inst()->GetCurrency(), "monero");
+	bool mineMonero = strcmp_i(::jconf::inst()->GetCurrency(), "karbo");
 
 	while (bQuit == 0)
 	{

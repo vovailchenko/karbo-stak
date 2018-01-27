@@ -72,7 +72,7 @@ void help()
 	cout<<"  --noUAC               disable the UAC dialog"<<endl;
 #endif
 #if (!defined(CONF_NO_AEON)) && (!defined(CONF_NO_MONERO))
-	cout<<"  --currency NAME       currency to mine: monero or aeon"<<endl;
+	cout<<"  --currency NAME       currency to mine: karbo or aeon"<<endl;
 #endif
 #ifndef CONF_NO_CPU
 	cout<<"  --noCPU               disable the CPU miner backend"<<endl;
@@ -129,8 +129,8 @@ std::string get_multipool_entry(bool& final)
 	std::cout<<std::endl<<"- Next Pool:"<<std::endl<<std::endl;
 
 	std::string pool;
-	if(xmrstak::params::inst().currency == "monero")
-		std::cout<<"- Pool address: e.g. pool.usxmrpool.com:3333"<<std::endl;
+	if(xmrstak::params::inst().currency == "karbo")
+		std::cout<<"- Pool address: e.g. karbunkul.ga:3333"<<std::endl;
 	else
 		std::cout<<"- Pool address: e.g. mine.aeon-pool.com:5555"<<std::endl;
 	std::cin >> pool;
@@ -196,13 +196,13 @@ void do_guided_config()
 
 		std::string tmp;
 #if defined(CONF_NO_AEON)
-		tmp = "monero";
+		tmp = "karbo";
 #elif defined(CONF_NO_MONERO)
 		tmp = "aeon";
 #endif
-		while(tmp != "monero" && tmp != "aeon")
+		while(tmp != "karbo" && tmp != "aeon")
 		{
-			std::cout<<"- Currency: 'monero' or 'aeon'"<<std::endl;
+			std::cout<<"- Currency: 'karbo' or 'aeon'"<<std::endl;
 			std::cin >> tmp;
 			std::transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
 		} 
@@ -217,7 +217,7 @@ void do_guided_config()
 
 		userSetPool = false;
 		if(currency == "karbo")
-			std::cout<<"- Pool address: e.g. pool.usxmrpool.com:3333"<<std::endl;
+			std::cout<<"- Pool address: e.g. karbunkul.ga:3333"<<std::endl;
 		else
 			std::cout<<"- Pool address: e.g. mine.aeon-pool.com:5555"<<std::endl;
 		std::cin >> pool;

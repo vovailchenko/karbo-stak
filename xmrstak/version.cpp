@@ -33,11 +33,11 @@
 #endif
 
 #if defined(CONF_NO_AEON)
-#define COIN_TYPE "monero"
+#define COIN_TYPE "karbo"
 #elif defined(CONF_NO_MONERO)
 #define COIN_TYPE "aeon"
 #else
-#define COIN_TYPE "aeon-monero"
+#define COIN_TYPE "aeon-karbo"
 #endif
 
 #define XMRSTAK_PP_TOSTRING1(str) #str

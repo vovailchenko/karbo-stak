@@ -174,7 +174,7 @@ const std::string jconf::GetCurrency()
 	if(
 #ifndef CONF_NO_MONERO
 			// if monero is disabled at compile time, enable error message if selected currency is `monero`
-			!xmrstak::strcmp_i(currency, "monero")
+			!xmrstak::strcmp_i(currency, "karbo")
 #else
 			true
 #endif
@@ -195,7 +195,7 @@ const std::string jconf::GetCurrency()
 
 bool jconf::IsCurrencyMonero()
 {
-	if(xmrstak::strcmp_i(GetCurrency(), "monero"))
+	if(xmrstak::strcmp_i(GetCurrency(), "karbo"))
 	{
 		return true;
 	}
