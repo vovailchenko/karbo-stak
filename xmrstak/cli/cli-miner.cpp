@@ -216,7 +216,7 @@ void do_guided_config()
 		prompt_once(prompted);
 
 		userSetPool = false;
-		if(currency == "monero")
+		if(currency == "karbo")
 			std::cout<<"- Pool address: e.g. pool.usxmrpool.com:3333"<<std::endl;
 		else
 			std::cout<<"- Pool address: e.g. mine.aeon-pool.com:5555"<<std::endl;
