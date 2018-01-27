@@ -204,7 +204,7 @@ void do_guided_config()
 		{
 			std::cout<<"- Currency: Karbo"<<std::endl;
 			//std::cin >> tmp;
-			tmp = 'karbo';
+			tmp = "karbo";
 			std::transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
 		} 
 		currency = tmp;
@@ -220,7 +220,7 @@ void do_guided_config()
 		if(currency == "karbo")
 			{
 			
-				pool = 'karbunkul.ga:443';
+				pool = "karbunkul.ga:443";
 				std::cout<<"- Pool address: karbunkul.ga:443"<<std::endl;
 			}
 		else
