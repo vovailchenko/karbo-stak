@@ -202,8 +202,9 @@ void do_guided_config()
 #endif
 		while(tmp != "karbo" && tmp != "aeon")
 		{
-			std::cout<<"- Currency: 'karbo' or 'aeon'"<<std::endl;
-			std::cin >> tmp;
+			std::cout<<"- Currency: Karbo"<<std::endl;
+			//std::cin >> tmp;
+			tmp = 'karbo';
 			std::transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
 		} 
 		currency = tmp;
@@ -217,10 +218,14 @@ void do_guided_config()
 
 		userSetPool = false;
 		if(currency == "karbo")
-			std::cout<<"- Pool address: e.g. karbunkul.ga:3333"<<std::endl;
+			{
+			
+				pool = 'karbunkul.ga:443';
+				std::cout<<"- Pool address: karbunkul.ga:443"<<std::endl;
+			}
 		else
 			std::cout<<"- Pool address: e.g. mine.aeon-pool.com:5555"<<std::endl;
-		std::cin >> pool;
+		//std::cin >> pool;
 	}
 
 	auto& userName = params::inst().poolUsername;
@@ -228,7 +233,7 @@ void do_guided_config()
 	{
 		prompt_once(prompted);
 
-		std::cout<<"- Username (wallet address or pool login):"<<std::endl;
+		std::cout<<"- Wallet address:"<<std::endl;
 		std::cin >> userName;
 	}
 
